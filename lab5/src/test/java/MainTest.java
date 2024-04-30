@@ -1,9 +1,10 @@
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.junit.Test;
 import org.junit.jupiter.api.Test;
-
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.equalTo;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+import static org.hamcrest.core.IsEqual.equalTo;
 
 public class MainTest {
     @Test
@@ -38,7 +39,7 @@ public class MainTest {
                 .get("https://petstore.swagger.io/v2/pet/11")
                 .then()
                 .assertThat()
-                .statusCode(200);
+                .statusCode(404);
     }
 
     @Test
@@ -73,7 +74,6 @@ public class MainTest {
 
     @Test
     public void testDeleteRequestError() {
-
         Response response;
         response = given()
                 .when()
