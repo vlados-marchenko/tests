@@ -1,0 +1,16 @@
+.profile {
+  display: flex;
+  gap: 20px;
+  /* width: 250px; */
+  flex-direction: row;
+}
+  
+.profile--content {
+  background: #f4f4f4;
+  flex: 1;
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
